@@ -1,0 +1,6 @@
+[submodule "webscraper-backend"]
+	path = webscraper-backend
+	url = https://github.com/denisafilip/WebScrapingAPIService_Backend_Node.js
+[submodule "webscraper-frontend"]
+	path = webscraper-frontend
+	url = https://github.com/denisafilip/WebScrapingAPIService_Frontend_React
