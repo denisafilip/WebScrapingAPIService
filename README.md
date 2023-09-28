@@ -2,6 +2,60 @@
 
 This application is a Web Scraping API service that allows users to input a webpage URL and receive structured data scraped from that webpage.
 
+## API Documentation
+
+This API has endpoints for web scraping and sentiment analysis.
+
+### Endpoints
+
+#### Scraper Endpoints
+
+##### 1. Scrape Webpage
+
+- **URL:** `/scrape`
+- **Method:** `GET`
+- **Description:** Scrapes the specified webpage and returns the scraped data.
+- **Query Parameters:**
+  - `url` (required): The URL of the webpage to scrape.
+  - `extractRules` (optional): A comma-separated list of elements to scrape from the webpage.
+  - `screenshot` (optional): Boolean value denoting if a screenshot of the scraped webpage should be taken.
+
+**Example:**
+```http
+GET /scrape?url=https://example.com&extractRules=h1,h2,p&screenshot=1
+```
+
+##### 1. Scrape Webpage
+- **URL:** `/count`
+- **Method:** `GET`
+- **Description:** Retrieves the word count of the blog post content from a specified URL.
+- **Query Parameters:**
+  - `url` (required): The URL of the blog post.
+
+**Example:**
+```http
+GET /count?url=https://example.com/blog-post
+```
+
+#### Sentiment Analysis Endpoints
+
+##### 1. Get Text Sentiment Analysis
+- **URL:** `/sentiment`
+- **Method:** `POST`
+- **Description:** Analyzes the sentiment of the provided text.
+- **Body Parameters:**
+  - `text` (required): The text to be analyzed.
+
+**Example:**
+```http
+POST /sentiment
+Content-Type: application/json
+{
+    "text": "This is a sample text for sentiment analysis."
+}
+```
+
+
 ## Prerequisites
 
 Before you begin, make sure that you have a working installation of [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/).
