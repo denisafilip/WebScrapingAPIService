@@ -53,6 +53,19 @@ The frontend server should open a new browser window/tab with the application ru
 
 ## Usage
 
+1. Enter a URL into the input field.
+2. Check if you want to obtain a screenshot of the scraped website as well.
+3. Select the data you wish to scrape using the provided options.
+4. Click the 'Scrape' button to initiate the web scraping process.
+5. Once the data is scraped, it will be displayed on the website.
+6. Press the 'Get Sentiment Analysis' button to obtain the overall sentiment of the scraped data.
+7. Press the 'Download Scraped Text' button to download a JSON file with the scraped data.
+8. Enter a URL of a blog post below, to count the words of its content.
+
+![Screenshot of Web Scraping Application](https://github.com/denisafilip/WebScrapingAPIService/blob/main/websiteScreenshot.png)
+
+
+
 
 
 
