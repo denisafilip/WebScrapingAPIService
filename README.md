@@ -19,18 +19,40 @@ This API has endpoints for web scraping and sentiment analysis.
   - `url` (required): The URL of the webpage to scrape.
   - `extractRules` (optional): A comma-separated list of elements to scrape from the webpage.
   - `screenshot` (optional): Boolean value denoting if a screenshot of the scraped webpage should be taken.
+- **Response Structure:**
+  - If screenshot is included:
+    ```json
+    {
+        "text": [ /* scraped text content */ ],
+        "screenshot": "base64-encoded-screenshot"
+    }
+    ```
+  - If screenshot is not included:
+    ```json
+    {
+        "text": [ /* scraped text content */ ]
+    }
+    ```
 
 **Example:**
 ```http
 GET /scrape?url=https://example.com&extractRules=h1,h2,p&screenshot=1
 ```
 
-##### 1. Scrape Webpage
+##### 2. Count Words from Blog Post
+
 - **URL:** `/count`
 - **Method:** `GET`
 - **Description:** Retrieves the word count of the blog post content from a specified URL.
 - **Query Parameters:**
   - `url` (required): The URL of the blog post.
+- **Response Structure:**
+    ```json
+    {
+        "text": "text-content-of-blog-post",
+        "wordCount": int(word-count-of-blog-post)
+    }
+    ```
 
 **Example:**
 ```http
@@ -40,11 +62,19 @@ GET /count?url=https://example.com/blog-post
 #### Sentiment Analysis Endpoints
 
 ##### 1. Get Text Sentiment Analysis
+
 - **URL:** `/sentiment`
 - **Method:** `POST`
 - **Description:** Analyzes the sentiment of the provided text.
 - **Body Parameters:**
   - `text` (required): The text to be analyzed.
+- **Response Structure:**
+    ```json
+    {
+        "score": double(score-of-analyzed-text),
+        "overallSentiment": "sentiment-of-analyzed-text"
+    }
+    ```
 
 **Example:**
 ```http
